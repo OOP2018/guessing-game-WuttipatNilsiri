@@ -9,11 +9,16 @@
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
+	private int count = 0;
+	private int ans = 0;
 
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
     	message = "";
+    }
+    public int getCounter(){
+    	return count;
     }
    
     /**
@@ -22,6 +27,7 @@ public class NumberGame {
      * @return true if correct, false otherwise
      */
     public boolean guess(int answer) {
+    	count++;
 		// TODO your subclass should override this method
 		message = "Sorry, that's not correct";
 		return false;
@@ -62,4 +68,7 @@ public class NumberGame {
     public String toString() {
 		return "You should override this method for your game";
     }
+	public int getTrueAnswer(){
+		return ans;
+	}
 }
