@@ -1,4 +1,9 @@
 
+/**
+ * class that contain Algolithm for Solve guessing game
+ * @author ARZ
+ *
+ */
 public class GameSolver {
 	/**
 	 * let AI play game

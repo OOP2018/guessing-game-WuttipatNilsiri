@@ -10,7 +10,8 @@ public class Main {
 		NumberGame game = new GuessingGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		GameSolver AI = new GameSolver();
-		ui.play( game );
+		GameSolver_Recursive HIE = new GameSolver_Recursive();
+		HIE.play(game);
 		AI.play(game);
 		
 		//TODO display the answer returned by play

@@ -1,5 +1,10 @@
 
 import java.math.*;
+/**
+ * Guessing Game that random one number which input that upperbound and let user solve
+ * @author ARZ
+ *
+ */
 public class GuessingGame extends NumberGame{
 	/** upper bound for secret number */
     private int max;
