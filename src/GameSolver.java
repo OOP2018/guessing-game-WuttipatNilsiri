@@ -1,7 +1,7 @@
 
 /**
  * class that contain Algolithm for Solve guessing game
- * @author ARZ
+ * @author wuttipat nilsiri
  *
  */
 public class GameSolver {
@@ -21,22 +21,22 @@ public class GameSolver {
 		// init answer
 		int trueAns = 0;
 		// keep random by re-arrage the range 
-		while(true){
+		boolean isCorrect = false;
+		while(!isCorrect){
 			int range = (max - min) + 1; 
 			int solvedNumber = (int)((Math.random() * range) + min);
 			System.out.println(solvedNumber);
-			game.guess(solvedNumber);
+			isCorrect = game.guess(solvedNumber);
 			String hint = game.getMessage();
-			if (hint.contains("big") || hint.contains("large")){
+			if (hint.contains("too big") || hint.contains("large")){
 				max = solvedNumber;
 			}
-			else if (hint.contains("small") || hint.contains("low")){
+			else if (hint.contains("too small") || hint.contains("low")){
 				min = solvedNumber;
 			}
 			else if (hint.contains("correct") || hint.contains("right")){
 				trueAns = solvedNumber;
 				System.out.println("i got it !");
-				break;
 			}
 		}
 		return trueAns;

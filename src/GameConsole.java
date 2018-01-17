@@ -29,7 +29,7 @@ public class GameConsole {
 		/**
 		 * show total count
 		 */
-		System.out.println("Counter " + game.getCounter());
+		System.out.println("Counter " + game.getCount());
 
 	}
 

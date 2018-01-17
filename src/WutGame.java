@@ -2,10 +2,10 @@
 import java.math.*;
 /**
  * Guessing Game that random one number which input that upperbound and let user solve
- * @author ARZ
+ * @author wuttipat nilsiri
  *
  */
-public class GuessingGame extends NumberGame{
+public class WutGame extends NumberGame{
 	/** upper bound for secret number */
     private int max;
     /** the solution to the game */
@@ -22,7 +22,7 @@ public class GuessingGame extends NumberGame{
 	 * initial GuessingGame with upperbound number 
 	 * @param max upperbound of guessing game
 	 */
-	public GuessingGame(int max){
+	public WutGame(int max){
 		AnalyseMaxMin(max,min);
 		int range = (this.max - this.min) + 1;     
 		this.secret = (int)((Math.random() * range) + min);
@@ -83,9 +83,9 @@ public class GuessingGame extends NumberGame{
 		
 	}
 	/**
-	 * to know counter
+	 * to know count that user guess
 	 */
-	public int getCounter(){
+	public int getCount(){
 		return counter;
 	}
 	
