@@ -6,7 +6,7 @@
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
-		int upperBound = 100;
+		int upperBound = Integer.MAX_VALUE;
 		NumberGame game = new WutGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		GameSolver AI = new GameSolver();

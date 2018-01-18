@@ -8,10 +8,17 @@ public class GameSolver_Rercur {
 	 * let AI play with this Algolithm 
 	 * @param game : NumberGame
 	 */
+	private int count = 0;
 	public void play (NumberGame game){
+		System.out.println("----------------------------------");
+		System.out.println("O(logn) sovler");
 		System.out.println("True Ans is " + game.getTrueAnswer());
 		System.out.println("----------------------------------");
-		int ans = solve(game, game.getUpperBound(), 1);
+		//just init stupid guess is 1
+		int max = game.getUpperBound();
+		int min = 1;
+		int ans = min + (max-min)/2;
+		ans = solve(game, game.getUpperBound(),1, ans);
 		System.out.println(ans);
 	}
 	/**
@@ -21,26 +28,31 @@ public class GameSolver_Rercur {
 	 * @param ans : int
 	 * @return ans : int
 	 */
-	public int solve(NumberGame game,int max , int ans){
-	System.out.println(ans);
+	public int solve(NumberGame game,int max,int min, int ans){
+	count++;
+	System.out.println(count+" : "+ans);
 	//let AI that ans value
 	game.guess(ans);
-	if (game.getMessage().contains("small") || game.getMessage().contains("low")){
-		//when max and min differ only 1 so it need to plus 1 to guess higher one  
+	if (game.getMessage().contains("correct") || game.getMessage().contains("right")){
+		return ans;
+	}
+	else if (game.getMessage().contains("small") || game.getMessage().contains("low")){
+		//SPcase when max and min differ only 1 so it need to plus 1 to guess higher one  
 		if ( (max - ans) == 1 ){
 				System.out.println(ans+1);
 				game.guess(ans+1);
 				return ans+1;
 			}
-		//if not correct + half of ans and max
-		else return solve(game,max, ans + (max - ans)/2);
+		min = ans + 1;	//forgot the ans by +1 as min
+		
 	}
-	else
-		if (game.getMessage().contains("big") || game.getMessage().contains("large")){
-			//forgot the ans by -1 
-			return solve(game,ans-1 , ans/2);
-		}
-	return ans;
+	else if (game.getMessage().contains("big") || game.getMessage().contains("large")){
+		max = ans - 1;	//forgot the ans by -1 as max
+	}
+	ans = min + (max-min)/2;
+	return solve(game,max,min,ans);
+		
+	
 	}
 	
 }

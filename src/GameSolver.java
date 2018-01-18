@@ -10,8 +10,11 @@ public class GameSolver {
 	 * @param game
 	 * @return true Answer
 	 */
+	private int count = 0;
 	public int play(NumberGame game){
+		System.out.println("----------------------------------");
 		// make it easy to test
+		System.out.println("random solve");
 		System.out.println("True Ans is " + game.getTrueAnswer());
 		System.out.println("----------------------------------");
 		// init max 
@@ -25,20 +28,22 @@ public class GameSolver {
 		while(!isCorrect){
 			int range = (max - min) + 1; 
 			int solvedNumber = (int)((Math.random() * range) + min);
-			System.out.println(solvedNumber);
+			count++;
+			System.out.println(count+" : "+solvedNumber);
 			isCorrect = game.guess(solvedNumber);
 			String hint = game.getMessage();
 			if (hint.contains("too big") || hint.contains("large")){
-				max = solvedNumber;
+				max = solvedNumber - 1;
 			}
 			else if (hint.contains("too small") || hint.contains("low")){
-				min = solvedNumber;
+				min = solvedNumber + 1;
 			}
 			else if (hint.contains("correct") || hint.contains("right")){
 				trueAns = solvedNumber;
 				System.out.println("i got it !");
 			}
 		}
+		System.out.println("total : "+count);
 		return trueAns;
 	}
 }
