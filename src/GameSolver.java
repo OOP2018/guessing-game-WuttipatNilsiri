@@ -20,7 +20,7 @@ public class GameSolver {
 		int min = 1;
 		// init answer
 		int trueAns = 0;
-		// keep random by re-arrage the range 
+		// keep random by	 re-arrage the range 
 		boolean isCorrect = false;
 		while(!isCorrect){
 			int range = (max - min) + 1; 

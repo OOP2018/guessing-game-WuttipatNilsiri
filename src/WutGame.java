@@ -20,7 +20,7 @@ public class WutGame extends NumberGame{
 	private int counter = 0;
 	/**
 	 * initial GuessingGame with upperbound number 
-	 * @param max upperbound of guessing game
+	 * @param max : upperbound of guessing game
 	 */
 	public WutGame(int max){
 		AnalyseMaxMin(max,min);

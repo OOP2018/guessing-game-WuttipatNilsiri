@@ -4,7 +4,6 @@ import java.util.Scanner;
  *  Play guessing game on the console.
  */
 public class GameConsole {
-	private int count = 0;
 	/** play the game. */
 	public void play(NumberGame game) {
 
