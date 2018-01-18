@@ -15,7 +15,6 @@ public class GameSolver_Rercur {
 		System.out.println("O(logn) sovler");
 		System.out.println("True Ans is " + game.getTrueAnswer());
 		System.out.println("----------------------------------");
-		//just init stupid guess is 1
 		int max = game.getUpperBound();
 		int min = 1;
 		int ans = min + (max-min)/2;
