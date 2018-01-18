@@ -8,6 +8,7 @@ public class GameSolver_Rercur {
 	 * let AI play with this Algolithm 
 	 * @param game : NumberGame
 	 */
+	//own count
 	private int count = 0;
 	public void play (NumberGame game){
 		System.out.println("----------------------------------");
@@ -20,6 +21,7 @@ public class GameSolver_Rercur {
 		int ans = min + (max-min)/2;
 		ans = solve(game, game.getUpperBound(),1, ans);
 		System.out.println(ans);
+		System.out.println("total : " +count);
 	}
 	/**
 	 * Solver Algolithm recursion
@@ -33,6 +35,7 @@ public class GameSolver_Rercur {
 	System.out.println(count+" : "+ans);
 	//let AI that ans value
 	game.guess(ans);
+	//terminate condition
 	if (game.getMessage().contains("correct") || game.getMessage().contains("right")){
 		return ans;
 	}
@@ -43,12 +46,12 @@ public class GameSolver_Rercur {
 				game.guess(ans+1);
 				return ans+1;
 			}
-		min = ans + 1;	//forgot the ans by +1 as min
-		
+		min = ans + 1;	//forgot the ans by +1 as min	
 	}
 	else if (game.getMessage().contains("big") || game.getMessage().contains("large")){
 		max = ans - 1;	//forgot the ans by -1 as max
 	}
+	
 	ans = min + (max-min)/2;
 	return solve(game,max,min,ans);
 		
