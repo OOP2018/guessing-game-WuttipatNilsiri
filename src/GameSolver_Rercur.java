@@ -1,6 +1,6 @@
 /**
  * Game Solver Algolithm with recursion 
- * @author ARZ
+ * @author Wuttipat Nilsiri
  *
  */
 public class GameSolver_Rercur {
