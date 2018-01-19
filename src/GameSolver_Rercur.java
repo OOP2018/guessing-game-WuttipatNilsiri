@@ -31,7 +31,7 @@ public class GameSolver_Rercur {
 	 */
 	public int solve(NumberGame game,int max,int min, int ans){
 	count++;
-	System.out.println(count+" : "+ans);
+//	System.out.println(count+" : "+ans);
 	//let AI that ans value
 	game.guess(ans);
 	//terminate condition
@@ -41,7 +41,7 @@ public class GameSolver_Rercur {
 	else if (game.getMessage().toLowerCase().contains("small") || game.getMessage().toLowerCase().contains("low")){
 		//SPcase when max and ans differ only 1 so it need to plus 1 to guess higher one  
 		if ( (max - ans) == 1 ){
-				System.out.println(ans+1);
+//				System.out.println(ans+1);
 				game.guess(ans+1);
 				return ans+1;
 			}
