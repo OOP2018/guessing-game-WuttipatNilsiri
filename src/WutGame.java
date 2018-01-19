@@ -83,8 +83,9 @@ public class WutGame extends NumberGame{
 		
 	}
 	/**
-	 * to know count that user guess
-	 */
+     *  to know count that user guess
+     * @return counter Number of guess
+     */
 	public int getCount(){
 		return counter;
 	}

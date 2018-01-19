@@ -35,11 +35,11 @@ public class GameSolver_Rercur {
 	//let AI that ans value
 	game.guess(ans);
 	//terminate condition
-	if (game.getMessage().contains("correct") || game.getMessage().contains("right")){
+	if (game.getMessage().toLowerCase().contains("correct") || game.getMessage().toLowerCase().contains("right")){
 		return ans;
 	}
-	else if (game.getMessage().contains("small") || game.getMessage().contains("low")){
-		//SPcase when max and min differ only 1 so it need to plus 1 to guess higher one  
+	else if (game.getMessage().toLowerCase().contains("small") || game.getMessage().toLowerCase().contains("low")){
+		//SPcase when max and ans differ only 1 so it need to plus 1 to guess higher one  
 		if ( (max - ans) == 1 ){
 				System.out.println(ans+1);
 				game.guess(ans+1);
@@ -47,10 +47,11 @@ public class GameSolver_Rercur {
 			}
 		min = ans + 1;	//forgot the ans by +1 as min	
 	}
-	else if (game.getMessage().contains("big") || game.getMessage().contains("large")){
+	else if (game.getMessage().toLowerCase().contains("big") || game.getMessage().toLowerCase().contains("large")){
 		max = ans - 1;	//forgot the ans by -1 as max
 	}
-	
+	else
+		return 0;
 	ans = min + (max-min)/2;
 	return solve(game,max,min,ans);
 		

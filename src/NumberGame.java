@@ -17,7 +17,10 @@ public class NumberGame {
 		// initialize your game.
     	message = "";
     }
-    /** to know count that user guess */
+    /**
+     *  to know count that user guess
+     * @return count Number of guess
+     */
     public int getCount(){
     	return count;
     }
