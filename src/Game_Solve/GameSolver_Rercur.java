@@ -1,3 +1,7 @@
+package Game_Solve;
+
+import Game.NumberGame;
+
 /**
  * Game Solver Algolithm with recursion 
  * @author Wuttipat Nilsiri
@@ -20,7 +24,7 @@ public class GameSolver_Rercur {
 		int ans = min + (max-min)/2;
 		ans = solve(game, game.getUpperBound(),1, ans);
 		System.out.println(ans);
-		System.out.println("total : " +count);
+		System.out.println("total : " + (count-1));
 	}
 	/**
 	 * Solver Algolithm recursion

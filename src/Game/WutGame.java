@@ -1,3 +1,4 @@
+package Game;
 
 import java.math.*;
 /**
@@ -79,6 +80,8 @@ public class WutGame extends NumberGame{
 		this.ans = ans;
 		setHint();
 		counter++;
+		setChanged();
+		notifyObservers();
 		return isCorrect();
 		
 	}
@@ -98,6 +101,10 @@ public class WutGame extends NumberGame{
 	 */
 	public int getTrueAnswer(){
 		return secret;
+	}
+	
+	public int  getUserAnswer(){
+		return ans;
 	}
 	
 	/**

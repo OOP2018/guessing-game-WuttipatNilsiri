@@ -1,3 +1,9 @@
+import Game.NumberGame;
+import Game.WutGame;
+import Game_Solve.GameSolver;
+import Game_Solve.GameSolver_Rercur;
+import application.GameConsole;
+
 /**
  * A main class for the GuessingGame.
  * It is responsible for creating objects, 

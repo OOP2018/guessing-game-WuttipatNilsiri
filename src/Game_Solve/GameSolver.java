@@ -1,3 +1,6 @@
+package Game_Solve;
+
+import Game.NumberGame;
 
 /**
  * class that contain Algolithm for Solve guessing game
